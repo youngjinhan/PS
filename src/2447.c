@@ -1,3 +1,4 @@
+// method 1
 #include <stdio.h>
 #pragma warning(disable:4996)
 
@@ -35,3 +36,77 @@ int main()
 
     return 0;
 }
+
+
+
+//method2
+
+/*
+#include <stdio.h>
+#pragma warning(disable:4996)
+
+char list[2200][2200];
+int n;
+
+// ******중요******
+// i, j, div는 전역변수가 아니라 지역변수로 설정해야함.
+void star(int y, int x, int n) {
+   
+    if (n == 1)
+    {
+        list[y][x]= '*';
+  
+    }
+
+    else
+    { 
+ 
+        int div = n / 3;
+        for (int i = 0; i < 3; i++) 
+        {
+            for (int j = 0; j < 3; j++) 
+            {
+                if (i == 1 && j == 1)
+                {
+
+                }
+                                    
+                else
+                {
+                    star(y+(i*div),x+(j*div),div);
+                    
+                }
+            }
+        }
+        
+    }
+}
+        
+
+
+int main()
+{
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            list[i][j] = ' ';
+        }
+    }
+
+    star(0, 0, n);
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("%c", list[i][j]);
+        }
+        printf("\n");
+    }
+   
+
+    return 0;
+}
+*/
