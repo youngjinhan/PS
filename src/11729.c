@@ -26,12 +26,7 @@ int main()
 
     result = hanoi(n);
     printf("%d\n", result);
-    printf("%d %d", list[0][0], list[0][1]);
-    /*for (int i = 0; i < n; i++) {
-        printf("%d %d\n", list[i][0], list[i][1]);
-    }*/
 
-
-
+    
     return 0;
 }
