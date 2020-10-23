@@ -1,4 +1,5 @@
 // method 1
+// 공백을 먼저 처리
 #include <stdio.h>
 #pragma warning(disable:4996)
 
@@ -40,6 +41,7 @@ int main()
 
 
 //method2
+// '*'를 먼저 
 
 /*
 #include <stdio.h>
