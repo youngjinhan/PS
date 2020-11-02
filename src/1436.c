@@ -1,3 +1,8 @@
+// 666이 들어간 N번째 숫자 찾기
+// ex1. 입력: 2 출력: 1666
+// ex2. 입력: 6 출력: 5666
+// ex3. 입력: 7 출력: 6660
+
 #include <stdio.h>
 #pragma warning(disable:4996)
 
