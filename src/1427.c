@@ -1,3 +1,13 @@
+// 주어진 수의 자리수를 내림차순으로 정렬하기
+
+/* ex.
+input
+2413
+
+output
+4321
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #pragma warning(disable:4996)
