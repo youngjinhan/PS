@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int max=0;
-int Count[10001];
 
+int Count[10001];
+int max=0;
 
 
 int main() {
