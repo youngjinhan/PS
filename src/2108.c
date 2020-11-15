@@ -1,3 +1,5 @@
+// 첫째줄에 줄의 개수 N개가 주어지고
+
 #include <stdio.h>
 #include <math.h>
 
