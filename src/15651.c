@@ -3,18 +3,6 @@
 int out[10];
 int N, M;
 
-/*
-int isGood(int cur)
-{
-	for (int i = 1; i < cur; i++)
-	{
-		if (out[cur] <= out[i])
-			return 0;
-	}
-	return 1;
-}
-*/
-
 void sol(int cur)
 {
 	if (cur > M)
@@ -28,6 +16,7 @@ void sol(int cur)
 	for (int i = 1; i <= N; i++)
 	{
 		out[cur] = i;
+		//printf("%d ",out[cur]);
 		sol(cur + 1);
 				
 	}
