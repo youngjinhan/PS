@@ -49,8 +49,6 @@ void sol(int a)
 			max = sum;
 		if (sum < min)
 			min = sum;
-		
-
 	}
 
 	if (oper[0] == 0 && oper[1] == 0 && oper[2] == 0 && oper[3] == 0)
@@ -59,95 +57,32 @@ void sol(int a)
 	for (int i = 0; i < 4; i++)
 	{
 		if (i == 0)  // 덧셈
-		{
 			sum = num[a] + num[a + 1];
-			if (oper[i] > 0)  // 연산 가능 (사용하지 않은 덧셈 기호 남아 있을 때)
-			{
-				oper[i]--;
-				int tmp = num[a + 1];
-				num[a + 1] = sum;
-				count++;
-				sol(a + 1);
-				count--;
-				oper[i]++;
-				num[a + 1] = tmp;
-			}
-
-			else // 연산 불가 (더 이상 해당 연산 기호 남아있지 않음)
-			{
-				continue;
-			}
-		}
 			
 		else if (i == 1)
-		{
 			sum = num[a] - num[a + 1];
 			
-			if (oper[i] > 0)  // 연산 가능 (사용하지 않은 덧셈 기호 남아 있을 때)
-			{
-				oper[i]--;
-				int tmp = num[a + 1];
-				num[a + 1] = sum;
-				count++;
-				sol(a + 1);
-				count--;
-				oper[i]++;
-				num[a + 1] = tmp;
-			}
-
-			else // 연산 불가 (더 이상 해당 연산 기호 남아있지 않음)
-			{
-
-				continue;
-			}
-		}
-			
 		else if (i == 2)
-		{
 			sum = num[a] * num[a + 1];
-			if (oper[i] > 0)  // 연산 가능 (사용하지 않은 덧셈 기호 남아 있을 때)
-			{
-				oper[i]--;
-				int tmp = num[a + 1];
-				num[a + 1] = sum;
-				count++;
-				sol(a + 1);
-				count--;
-				oper[i]++;
-				num[a + 1] = tmp;
-			}
-
-			else // 연산 불가 (더 이상 해당 연산 기호 남아있지 않음)
-			{
-				continue;
-			}
-		}
 			
 		else
-		{
 			sum = num[a] / num[a + 1];
-			if (oper[i] > 0)  // 연산 가능 (사용하지 않은 덧셈 기호 남아 있을 때)
-			{
-				oper[i]--;
-				int tmp = num[a + 1];
-				num[a + 1] = sum;
-				count++;
-				sol(a + 1);
-				count--;
-				oper[i]++;
-				num[a + 1] = tmp;
-			}
 
-			else // 연산 불가 (더 이상 해당 연산 기호 남아있지 않음)
-			{
-				continue;
-			}
+		if (oper[i] > 0)  // 연산 가능 (사용하지 않은 덧셈 기호 남아 있을 때)
+		{
+			oper[i]--;
+			int tmp = num[a + 1];
+			num[a + 1] = sum;
+			count++;
+			sol(a + 1);
+			count--;
+			oper[i]++;
+			num[a + 1] = tmp;
 		}
-			
+
+		
 	}
 
-	
-	
 
 }
 
@@ -165,5 +100,8 @@ int main()
 	return 0;
 
 }
+
+
+
 
 
