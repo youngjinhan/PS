@@ -1,3 +1,16 @@
+/*
+자연수 N과 정수 K가 주어졌을 때 이항 계수 (█(N@K)) 구하기
+첫째 줄에 N과 K가 주어진다. (1 ≤ N ≤ 10, 0 ≤ K ≤ N)
+(█(N@K))를 출력한다.
+
+ex.
+input
+5 2
+
+output
+10
+*/
+
 #include <stdio.h>
 
 int main()
