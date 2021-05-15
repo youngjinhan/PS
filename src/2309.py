@@ -1,7 +1,6 @@
 small=list(int(input()) for _ in range(9))
 
 fake_sum=sum(small)-100
-#print(fake_sum)
 
 for i in range(9):
     for j in range(9):
@@ -14,7 +13,7 @@ for i in range(9):
             #small.remove(small[i])
             del small[j]
             del small[i]
-            fake_sum=0
+            #fake_sum=0   << 
             break
 
 small.sort()
