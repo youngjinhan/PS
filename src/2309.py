@@ -13,7 +13,7 @@ for i in range(9):
             #small.remove(small[i])
             del small[j]
             del small[i]
-            #fake_sum=0   << 
+            #fake_sum=0   << 필요없음
             break
 
 small.sort()
