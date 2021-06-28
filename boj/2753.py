@@ -1,4 +1,4 @@
-y=int(input()))
+y=int(input())
 if y%4!=0:
     print(0)
 else:
