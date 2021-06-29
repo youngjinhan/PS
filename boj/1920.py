@@ -1,11 +1,19 @@
+N = input()
+A = set(input().split())
+M = input()
+
+for m in input().split():
+    print(int(m in A))
+    
+
+'''
 N = int(input())
 A = set(map(int, input().split()))
 M = int(input())
 
 for m in map(int,input().split()):
     print(int(m in A))
-
-
+'''
 
 
 
