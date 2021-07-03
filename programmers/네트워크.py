@@ -1,4 +1,5 @@
 # 내 풀이
+# BFS + DFS 짬뽕?
 check=[]
 def connect(node,n,computers):
     check.append(node)
