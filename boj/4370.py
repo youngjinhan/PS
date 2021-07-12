@@ -48,3 +48,38 @@ for i in range(inputNum):
         print("Baekjoon wins.")
     else:
         print("Donghyuk wins.")
+
+        
+# 다른사람 풀이 3 (C code)
+#include<stdio.h>
+int main(){
+	for(;;){
+		double n;
+		if(scanf("%lf",&n)!=1)break;
+		int k=1;
+		for (;;k++){
+			n/=18;
+			if(n<=1)break;
+		}
+		if (1<2*n)
+			printf("Donghyuk wins.\n");
+		else
+			printf("Baekjoon wins.\n");
+	}
+}
+
+
+# 다른사람 풀이 4
+while True:
+    try:
+        n=int(input())
+        num=1
+        while num<n:
+            num*=18
+        num/=2
+        if num>=n:
+            print("Baekjoon wins.")
+        else:
+            print("Donghyuk wins.")
+    except:
+        break
