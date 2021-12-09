@@ -1,5 +1,5 @@
 import math
-m,n=map(int,input().split())
+m,n=map(int,input().split(' '))
 
 while m<=n:
     flag=1
@@ -7,6 +7,6 @@ while m<=n:
         if m%i==0:
             flag=0
             break
-    if flag:
+    if flag or m<=2:
         print(m)
     m+=1
