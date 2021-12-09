@@ -1,4 +1,4 @@
-# 방법 1
+# 방법 1 - 6348 ms
 import math
 m,n=map(int,input().split(' '))
 
@@ -15,7 +15,7 @@ while m<=n:
         print(m)
     m+=1
 
-# 방법 2
+# 방법 2 - 352 ms
 m,n=map(int,input().split())
 
 # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
