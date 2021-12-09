@@ -7,6 +7,9 @@ while m<=n:
         if m%i==0:
             flag=0
             break
-    if flag or m<=2:
+    if m==1:
+        m+=1
+        continue
+    if flag or m==2:
         print(m)
     m+=1
