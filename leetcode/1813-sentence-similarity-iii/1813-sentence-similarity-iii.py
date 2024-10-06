@@ -52,25 +52,3 @@ class Solution:
             sep1 = sep1[::-1]
             sep2 = sep2[::-1]
             return check()
-            
-
-       
-        # switch = True
-        # switch_cnt = 0
-        # i, j = 0, 0
-        # while True:
-        #     while i < len(sep1) and j < len(sep2):
-        #         if switch and sep1[i] == sep2[j]:
-        #             i += 1
-        #             j += 1
-        #         elif not switch and sep1[i] != sep2[j]:
-        #             i += 1
-        #         else: 
-        #             break
-        #     if i >= len(sep1) or j >= len(sep2):
-        #         break
-        #     switch = not switch
-        #     switch_cnt += 1
-        # print(switch_cnt)
-        
-        # return True if (i == len(sep1) and j == len(sep2) and switch_cnt == 2) or (switch_cnt == 0) else False
