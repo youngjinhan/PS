@@ -8,4 +8,4 @@ class Solution:
             else:
                 stack.append(c)
 
-        return len(stack) // 4 if len(stack) % 4 == 0 else len(stack) // 4 + 1
+        return (len(stack) // 2 + 1) // 2
