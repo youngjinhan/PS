@@ -9,6 +9,7 @@ class Solution:
         return (ans + 1) // 2
 
 
+
         ''' my solution
         
         stack = []
