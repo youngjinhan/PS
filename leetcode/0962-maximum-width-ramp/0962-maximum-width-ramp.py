@@ -6,7 +6,7 @@ class Solution(object):
         for i in range(n-2, -1, -1):
             part_max_list[i] = max(nums[i], part_max_list[i+1])
 
-        left, right, ans = 0, 0, -1
+        left, right, ans = 0, 0, 0
         while right < n:
             while left < right and nums[left] > part_max_list[right]:
                 left += 1
