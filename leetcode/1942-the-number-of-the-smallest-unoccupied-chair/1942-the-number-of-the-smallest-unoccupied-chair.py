@@ -17,7 +17,6 @@ class Solution:
             arr_time = times[arr_order[arr_cur]][0]
             while leave_cur < n and leave_time <= arr_time:
                 seat_no = seated_num[leave_order[leave_cur]]
-                # print("seat_no:", seat_no)
                 min_empty_num = min(min_empty_num, seat_no)
                 seats[seat_no] = None
                 seated_num[leave_order[leave_cur]] = None
@@ -25,7 +24,6 @@ class Solution:
                 leave_cur += 1
                 leave_time = times[leave_order[leave_cur]][1]
             
-            # print(arr_order[arr_cur], min_empty_num)
             if arr_order[arr_cur] == targetFriend:
                 return min_empty_num
 
