@@ -1,33 +1,33 @@
 class Solution:
     def smallestChair(self, times: List[List[int]], targetFriend: int) -> int:
-        # '''
-        # Event-based with Two Priority Queues
-        # Time Complexity: O(nlogn)
-        # '''
+        '''
+        Event-based with Two Priority Queues
+        Time Complexity: O(nlogn)
+        '''
 
-        # n = len(times)
-        # events = []
-        # for i in range(n):
-        #     events.append([times[i][0], i])
-        #     events.append([times[i][1], ~i])
+        n = len(times)
+        events = []
+        for i in range(n):
+            events.append([times[i][0], i])
+            events.append([times[i][1], ~i])
 
-        # events.sort()
+        events.sort()
 
-        # available_seats = list(range(n))
-        # occupied_seats = []
+        available_seats = list(range(n))
+        occupied_seats = []
 
-        # for event in events:
-        #     while occupied_seats and occupied_seats[0][0] <= event[0]:
-        #         time, seat = heapq.heappop(occupied_seats)
-        #         heapq.heappush(available_seats, seat)
+        for event in events:
+            while occupied_seats and occupied_seats[0][0] <= event[0]:
+                time, seat = heapq.heappop(occupied_seats)
+                heapq.heappush(available_seats, seat)
             
-        #     friend = event[1]
-        #     if friend >= 0:
-        #         seat = heapq.heappop(available_seats)
+            friend = event[1]
+            if friend >= 0:
+                seat = heapq.heappop(available_seats)
 
-        #         if friend == targetFriend:
-        #             return seat
-        #         heapq.heappush(occupied_seats, [times[friend][1], seat])
+                if friend == targetFriend:
+                    return seat
+                heapq.heappush(occupied_seats, [times[friend][1], seat])
 
 
 
