@@ -1,38 +1,44 @@
-class Solution(object):
-    def smallestChair(self, times, targetFriend):
-        events = []  # to store both arrival and leave events
+from collections import deque
 
-        # populate events with arrival and leave times
-        for i in range(len(times)):
-            events.append([times[i][0], i])  # Arrival
-            events.append([times[i][1], ~i])  # Leave
+class Solution:
+    def smallestChair(self, times: List[List[int]], targetFriend: int) -> int:
+        n = len(times)
+        arr_order = sorted([i for i in range(n)], key = lambda x: (times[x][0]))
+        leave_order = sorted([i for i in range(n)], key = lambda x: (times[x][1], x))
+        seats = [None] * n
+        seated_num = [None] * n
+        min_empty_num = 0
 
-        events.sort()  # Sort events by time
+        arr_cur, leave_cur = 0, 0
+        leave_time = times[leave_order[leave_cur]][1]
 
-        available_chairs = list(
-            range(len(times))
-        )  # Tracking chairs that are free
 
-        occupied_chairs = []  # When each chair will be free
+        while arr_cur < n:
+            arr_time = times[arr_order[arr_cur]][0]
+            while leave_cur < n and leave_time <= arr_time:
+                seat_no = seated_num[leave_order[leave_cur]]
+                # print("seat_no:", seat_no)
+                min_empty_num = min(min_empty_num, seat_no)
+                seats[seat_no] = None
+                seated_num[leave_order[leave_cur]] = None
 
-        for event in events:
-            time, friend = event
+                leave_cur += 1
+                leave_time = times[leave_order[leave_cur]][1]
+            
+            # print(arr_order[arr_cur], min_empty_num)
+            if arr_order[arr_cur] == targetFriend:
+                return min_empty_num
 
-            # free up chairs if friends leave
-            while occupied_chairs and occupied_chairs[0][0] <= time:
-                _, chair = heapq.heappop(
-                    occupied_chairs
-                )  # Pop chair that becomes empty
-                heapq.heappush(available_chairs, chair)  # available chairs
+            seats[min_empty_num] = arr_order[arr_cur]
+            seated_num[arr_order[arr_cur]] = min_empty_num
+            arr_cur += 1
 
-            # If friend arrives
-            if friend >= 0:
-                chair = heapq.heappop(available_chairs)
-                if friend == targetFriend:
-                    return chair
-                heapq.heappush(
-                    occupied_chairs, [times[friend][1], chair]
-                )  # chair will be occupied till this time
+            while min_empty_num < n and seats[min_empty_num] != None:
+                min_empty_num += 1
 
-        return -1  # should not come to this point
+            if min_empty_num == n:
+                return -9999
+
         
+
+        return 0
