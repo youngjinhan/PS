@@ -35,10 +35,3 @@ class Solution:
 
             while min_empty_num < n and seats[min_empty_num] != None:
                 min_empty_num += 1
-
-            # if min_empty_num == n:
-            #     return -9999
-
-        
-
-        return 0
