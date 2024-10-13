@@ -3,6 +3,36 @@ from collections import deque
 class Solution:
     def smallestChair(self, times: List[List[int]], targetFriend: int) -> int:
         n = len(times)
+        events = []
+        for i in range(n):
+            events.append([times[i][0], i])
+            events.append([times[i][1], ~i])
+
+        events.sort()
+
+        available_seats = list(range(n))
+        occupied_seats = []
+
+        for event in events:
+            while occupied_seats and occupied_seats[0][0] <= event[0]:
+                time, seat = heapq.heappop(occupied_seats)
+                heapq.heappush(available_seats, seat)
+            
+            friend = event[1]
+            if friend >= 0:
+                seat = heapq.heappop(available_seats)
+
+                if friend == targetFriend:
+                    return seat
+                heapq.heappush(occupied_seats, [times[friend][1], seat])
+
+
+
+        '''
+        My Solution
+        Time Complexity: O(nlogn)
+        '''
+        n = len(times)
         arr_order = sorted([i for i in range(n)], key = lambda x: (times[x][0]))
         leave_order = sorted([i for i in range(n)], key = lambda x: (times[x][1], x))
         seats = [None] * n
