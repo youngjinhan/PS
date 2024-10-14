@@ -1,7 +1,7 @@
 class Solution:
     def smallestRange(self, nums: List[List[int]]) -> List[int]:
         '''
-        Editorial 풀이
+        Editorial 1 풀이
         '''
         k = len(nums)
         # Stores the current index of each list
