@@ -17,11 +17,11 @@ class Solution:
         occupied_seats = []
 
         for event in events:
-            while occupied_seats and occupied_seats[0][0] <= event[0]:
-                time, seat = heapq.heappop(occupied_seats)
+            time, friend = event
+            while occupied_seats and occupied_seats[0][0] <= time:
+                _, seat = heapq.heappop(occupied_seats)
                 heapq.heappush(available_seats, seat)
             
-            friend = event[1]
             if friend >= 0:
                 seat = heapq.heappop(available_seats)
 
@@ -29,6 +29,7 @@ class Solution:
                     return seat
                 heapq.heappush(occupied_seats, [times[friend][1], seat])
 
+        return -1  # should not come to this point
 
 
         '''
