@@ -1,5 +1,19 @@
 class Solution:
     def pushDominoes(self, dominoes: str) -> str:
+
+        while True:
+            new_dominoes = dominoes.replace('R.L', '|').replace('.L', 'LL').replace('R.', 'RR').replace('|', 'R.L')
+            if new_dominoes == dominoes:
+                break
+            else:
+                dominoes = new_dominoes
+            
+        return dominoes
+
+        
+        '''
+        Editorial Approach #1
+        
         leng = len(dominoes)
         symbols = [(-1, 'L')] + [(i, x) for i, x in enumerate(dominoes) if x != '.'] + [(leng, 'R')]
 
@@ -18,7 +32,7 @@ class Solution:
                         ans[k] = 'R'
             
         return "".join(ans)
-        
+        '''
 
         '''
         My second solution.
