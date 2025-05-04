@@ -6,7 +6,8 @@ class Solution:
         R. -> RR
         R.L -> R.L
         '''
-        while True:
+        # R......
+        while True: 
             new_dominoes = dominoes.replace('R.L', '|').replace('.L', 'LL').replace('R.', 'RR').replace('|', 'R.L')
             if new_dominoes == dominoes:
                 break
@@ -38,40 +39,6 @@ class Solution:
             
         return "".join(ans)
         '''
-
-        # leng = len(dominoes)
-        # r_arr, l_arr, ans = [], [None] * leng, []
-
-        # force = 0
-        # for i in range(leng):
-        #     if dominoes[i] == 'R':
-        #         force = leng
-        #     elif dominoes[i] == 'L':
-        #         force = 0
-        #     else:
-        #         force = max(force-1, 0)
-        #     r_arr.append(force)
-        
-        # force = 0
-        # for i in range(leng-1, -1, -1):
-        #     if dominoes[i] == 'L':
-        #         force = -leng
-        #     elif dominoes[i] == 'R':
-        #         force = 0
-        #     else:
-        #         force = min(force + 1, 0)
-        #     l_arr[i] = force
-    
-        # print(r_arr, l_arr)
-        # for i in range(leng):
-        #     res = r_arr[i] + l_arr[i]
-        #     if res > 0:
-        #         ans.append('R')
-        #     elif res == 0:
-        #         ans.append('.')
-        #     else:
-        #         ans.append('L')
-        # return "".join(ans)
             
 
         '''
