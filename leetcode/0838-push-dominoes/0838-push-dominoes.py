@@ -2,7 +2,7 @@ class Solution:
     def pushDominoes(self, dominoes: str) -> str:
 
         while True:
-            new_dominoes = dominoes.replace('R.L', '|').replace('.L', 'LL').replace('R.', 'RR').replace('|', 'R.L')
+            new_dominoes = dominoes.replace('R.L', '|').replace('R.', 'RR').replace('.L', 'LL').replace('|', 'R.L')
             if new_dominoes == dominoes:
                 break
             else:
