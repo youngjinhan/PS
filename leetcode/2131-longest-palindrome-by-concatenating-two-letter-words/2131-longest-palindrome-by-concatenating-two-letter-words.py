@@ -1,16 +1,18 @@
 class Solution:
     def longestPalindrome(self, words: List[str]) -> int:
-        p = set()
         ans = 0
-        self_pal = False
+        words_cnt = defaultdict(int)
         for word in words:
-            if word[0] == word[1]:
-                self_pal = True
-            if word[::-1] in p:
-                p.remove(word[::-1])
+            rev = word[::-1]
+            if words_cnt[rev] > 0:
+                words_cnt[rev] -= 1
                 ans += 4
                 continue
-            p.add(word)
-        if self_pal:
-            ans += 2
+            words_cnt[word] += 1
+
+        for w in words_cnt:
+            if words_cnt[w] > 0 and w[0] == w[1]:
+                ans += 2
+                break
+    
         return ans
