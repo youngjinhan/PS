@@ -3,7 +3,10 @@ class Solution {
         long ans = 0;
 
         for (int i = 0; i <= Math.min(n, limit); i++) {
-            ans += Math.max(Math.min(limit, n-i) - Math.max(0, n-i-limit) + 1, 0);
+            if (n - i > 2 * limit) {
+                continue;
+            }
+            ans += Math.min(limit, n-i) - Math.max(0, n-i-limit) + 1;
         }
 
         return ans;
