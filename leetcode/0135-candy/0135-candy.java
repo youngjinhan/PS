@@ -1,9 +1,10 @@
 class Solution {
     public int candy(int[] ratings) {
-        int[] candies = new int[ratings.length];
+        int n = ratings.length;
+        int[] candies = new int[n];
         int cnt = 0;
         Arrays.fill(candies, 1);
-        for (int i = 0; i< candies.length - 1; i++) {
+        for (int i = 0; i< n - 1; i++) {
             if (ratings[i] > ratings[i+1] && candies[i] <= candies[i+1]) {
                 candies[i] = candies[i+1] + 1;
             } else if (ratings[i] < ratings[i+1] && candies[i] >= candies[i+1]) {
@@ -11,7 +12,7 @@ class Solution {
             }
         }
 
-        for (int i = candies.length - 1; i > 0; i--) {
+        for (int i = n - 1; i > 0; i--) {
             if (ratings[i] > ratings[i-1] && candies[i] <= candies[i-1]) {
                 candies[i] = candies[i-1] + 1;
             } else if (ratings[i] < ratings[i-1] && candies[i] >= candies[i-1]) {
