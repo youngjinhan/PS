@@ -25,10 +25,11 @@ class Solution {
             }
         }
 
-        int[][] answer = new int[ans.size()][2];
-        for (int i = 0; i < ans.size(); i++) {
-            answer[i] = ans.get(i);
-        }
-        return answer;
+        // int[][] answer = new int[ans.size()][2];
+        // for (int i = 0; i < ans.size(); i++) {
+        //     answer[i] = ans.get(i);
+        // }
+        // return answer;
+        return ans.toArray(new int[ans.size()][]);
     }
 }
