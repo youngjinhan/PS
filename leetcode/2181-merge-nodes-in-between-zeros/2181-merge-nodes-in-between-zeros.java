@@ -21,8 +21,8 @@ class Solution {
                     answer = new ListNode(s);
                     ans = answer;
                 } else {
-                ans.next = new ListNode(s);
-                ans = ans.next;
+                    ans.next = new ListNode(s);
+                    ans = ans.next;
                 }
                 s = 0;
                 continue;
