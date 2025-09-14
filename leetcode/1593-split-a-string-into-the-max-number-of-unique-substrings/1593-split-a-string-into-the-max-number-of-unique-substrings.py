@@ -1,19 +1,32 @@
 class Solution:
     def maxUniqueSplit(self, s: str) -> int:
-        seen = set()
-        return self.backtrack(s, 0, seen)
+        sub = set()
+        ans = 0
+        n = len(s)
+        def parse(cand, ls, subset): # (substring, left string, substring set)
+            nonlocal ans
+            if cand == ls:
+                if cand not in subset:
+                    ans = max(ans, len(sub) + 1)
+                return
 
-    def backtrack(self, s, start, seen):
-        if start == len(s):
-            return 0
+            if cand in subset:
+                return
 
-        max_count = 0
+            nc = len(cand)
+            for i in range(1, n - nc + 1):
+                subset.add(cand)
+                nls = ls[nc:]
+                parse(nls[:i], nls, subset)
+                subset.remove(cand)
 
-        for end in range(start + 1, len(s) + 1):
-            sub_string = s[start:end]
-            if sub_string not in seen:
-                seen.add(sub_string)
-                max_count = max(max_count, 1 + self.backtrack(s, end, seen))
-                seen.remove(sub_string)
 
-        return max_count
+        parse("", s, sub)
+
+        return ans - 1
+
+        
+
+
+
+        
