@@ -8,7 +8,7 @@ class Solution:
         for x, y in guards:
             cells[x][y] = 2
 
-        # for x, y in guards:
+        for x, y in guards:
             for dx, dy in [[0, 1], [1, 0], [0, -1], [-1, 0]]:
                 nx, ny = x, y
                 while True:
