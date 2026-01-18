@@ -1,16 +1,20 @@
 class Solution:
     def flipgame(self, fronts: List[int], backs: List[int]) -> int:
-        cand = set()
-        to_be_removed = set()
         n = len(fronts)
+        poss = [True] * 2001
+        ans = 2001
 
         for i in range(n):
             if fronts[i] == backs[i]:
-                to_be_removed.add(fronts[i])
-                continue
-            cand.add(fronts[i])
-            cand.add(backs[i])
+                poss[fronts[i]] = False
 
-        ans = sorted(list(cand - to_be_removed))
+        for i in range(n):
+            if (poss[fronts[i]]):
+                ans = min(ans, fronts[i])
+            if (poss[backs[i]]):
+                ans = min(ans, backs[i])
 
-        return 0 if len(ans) == 0 else ans[0]
+        return ans if ans < 2001 else 0
+
+
+        
