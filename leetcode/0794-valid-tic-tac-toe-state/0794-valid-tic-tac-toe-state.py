@@ -56,20 +56,10 @@ class Solution:
         if nx > 0 and no > 0:
             return False
         
+        # X 빙고인데 개수가 같거나 O 빙고인데 X 개수가 큰 경우 False
         if (nx > 0 and (xc == oc)) or (no > 0 and (xc > oc)):
             return False
 
         if nx == 1 or no == 1 or (nx == 0 and no == 0):
             return True
-        
-        # 2개 이상 빙고가 만들어진 곳에서 겹치는 위치가 있는지 확인
-        if nx > 1:
-            for i in range(nx - 1):
-                if len(set(x_bingo[i]) & set(x_bingo[i+1])) == 0:
-                    return False
-        elif no > 1:
-            for i in range(no - 1):
-                if len(set(o_bingo[i]) & set(o_bingo[i+1])) == 0:
-                    return False
-        
         return True
