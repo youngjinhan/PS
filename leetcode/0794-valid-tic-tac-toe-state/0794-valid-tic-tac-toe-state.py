@@ -60,6 +60,4 @@ class Solution:
         if (nx > 0 and (xc == oc)) or (no > 0 and (xc > oc)):
             return False
 
-        if nx == 1 or no == 1 or (nx == 0 and no == 0):
-            return True
         return True
